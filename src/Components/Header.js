@@ -1,4 +1,4 @@
-import { AppBar, Container, createTheme, makeStyles, MenuItem, Select, ThemeProvider, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Container, createTheme, CssBaseline, makeStyles, MenuItem, Select, ThemeProvider, Toolbar, Typography } from '@material-ui/core'
 import React from 'react'
 import { CryptoState } from '../CryptoContext';
 
@@ -25,6 +25,7 @@ const Header = () => {
     })
     return (
         <ThemeProvider theme = {darktheme}>
+        {/* <CssBaseline/> */}
         <AppBar color='transparent' position='static'>
             <Container>
                 <Toolbar>
