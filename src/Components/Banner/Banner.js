@@ -4,7 +4,7 @@ import Carousel from './Carousel'
 
 const useStyles = makeStyles(()=>({
     banner:{
-        backgroundImage: "url(./banner2.jpg)",
+        backgroundImage: "url(https://github.com/piyush-eon/react-crypto-tracker/blob/master/public/banner2.jpg?raw=true)",
     },
     bannerContent:{
         height: 400,
