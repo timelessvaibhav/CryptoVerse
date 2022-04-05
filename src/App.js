@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+
 import "./App.css";
 import Header from "./Components/Header";
 import Homepage from "./Pages/Homepage";
@@ -15,15 +15,12 @@ function App() {
   }));
   const classes = useStyles();
   return (
-    <BrowserRouter>
+    
       <div className={classes.App}>
         <Header />
-
-        <Routes>
-          <Route path="/" element={<Homepage />} exact />
-        </Routes>
+        <Homepage />
       </div>
-    </BrowserRouter>
+  
   );
 }
 
