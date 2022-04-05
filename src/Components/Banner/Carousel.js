@@ -1,9 +1,8 @@
-import { makeStyles } from "@material-ui/core";
+import { Container, makeStyles } from "@material-ui/core";
 import React, { useEffect, useState } from "react";
 import { TrendingCoins } from "../../config/api";
 import axios from "axios";
 import { CryptoState } from "../../CryptoContext";
-import { Link } from "react-router-dom";
 import AliceCarousel from "react-alice-carousel";
 
 const useStyles = makeStyles(() => ({
@@ -15,6 +14,7 @@ const useStyles = makeStyles(() => ({
   carouselItem:{
       display: "flex",
       flexDirection: "column",
+      justifyContent: "center",
       alignItems: "center",
       cursor: "pointer",
       textTransform: "uppercase",
@@ -43,7 +43,7 @@ const Carousel = () => {
   const items = trending.map((coin)=>{
       let profit = coin.price_change_percentage_24h>=0;
     return (
-        <Link className={classes.carouselItem} to = {'/coins/${coin.id}'}>
+        <div className={classes.carouselItem}>
             <img src = {coin.image} alt = {coin.name} height = "80" style={{marginBottom: 10}}/>
             <span>
                 {coin.symbol}
@@ -55,7 +55,7 @@ const Carousel = () => {
             <span style={{fontSize: 22, fontWeight: 500}}>
                 {symbol}{numberWithCommas(coin.current_price.toFixed(2))}
             </span>
-        </Link>
+        </div>
     )
    })
 
@@ -64,10 +64,10 @@ const Carousel = () => {
         items:2,
     },
     256:{
-        items: 3,
+        items: 4,
     },
     512:{
-        items: 4,
+        items: 5,
     },
   };
 
